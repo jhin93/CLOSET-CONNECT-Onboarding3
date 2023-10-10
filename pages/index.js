@@ -1,8 +1,6 @@
 // init your index.js
 import React from "react";
 
-function index() {
-  return <div>Hello world</div>;
+export default function index() {
+  return <div>Hello World</div>;
 }
-
-export default index;
