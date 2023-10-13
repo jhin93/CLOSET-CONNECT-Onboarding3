@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
+import ItemCard from "@/components/ItemCard";
 
 export default function Home() {
   const [itemList, setItemList] = useState([]);
@@ -9,6 +10,7 @@ export default function Home() {
     try {
       const rawData = await axios.get(localURL + '/api/items');
       setItemList(rawData.data.listings);
+      console.log("=== itemList === : ", itemList)
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -22,7 +24,8 @@ export default function Home() {
       <div>
         <p>Test page</p>
         {itemList.map((item) => (
-            <div key={item.metadata.id}> {item.metadata.name}</div>
+            // <div key={item.metadata.id}> {item.metadata.name}</div>
+            <ItemCard key={item.metadata.id} item={item} />
         ))}
       </div>
   )
