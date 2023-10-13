@@ -34,7 +34,7 @@ export default async (
         // @ts-ignore
         const contract = await sdk.getContract(AZUKI_CONTRACT_ADDRESS);
         const listings = await contract.erc721.getAll({start, count});
-        console.log("Item Listings Data : ", listings)
+        // console.log("Item Listings Data : ", listings)
         res.status(200).json({listings});
     } else if (req.method === "POST") {
         res.status(200).json({message: "POST"});
