@@ -42,3 +42,5 @@ export default async (
         res.status(500).json({message: "wrong connection"});
     }
 }
+
+// commit test
