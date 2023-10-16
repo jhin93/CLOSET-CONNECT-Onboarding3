@@ -1,23 +1,17 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
 import ItemCard from "@/components/ItemCard";
+import getItems from '@/features/getItems'
 
 export default function Home() {
   const [itemList, setItemList] = useState([]);
 
-  async function getItems() {
-    const localURL = "http://localhost:3001";
-    try {
-      const rawData = await axios.get(localURL + '/api/items');
-      setItemList(rawData.data.listings);
-      console.log("=== itemList === : ", itemList)
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  }
-
   useEffect(() => {
-    getItems();
+    getItems().then((result) => {
+      setItemList(result);
+    }).catch((error) => {
+      console.error("Error fetching data from getItems.ts:", error);
+    });
   }, []);
 
   return (
