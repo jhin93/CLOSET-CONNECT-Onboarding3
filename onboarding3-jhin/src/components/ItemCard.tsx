@@ -12,6 +12,10 @@ const ImageTitle = styled.div`
   align-items: center;
 `
 
+const ItemName = styled.p`
+  font-size: large;
+`
+
 export default function ItemCard({item}: itemMetadata[]) {
     return (
         <div className="card">
@@ -26,9 +30,7 @@ export default function ItemCard({item}: itemMetadata[]) {
                 />
             </Link>
             <ImageTitle>
-                <h2 className="text-lg">{item.name}</h2>
-                <p className="mb-2">{item.brand}</p>
-                {/*<p>${item.metadata.price}</p>*/}
+                <ItemName className="text-lg">{item.name}</ItemName>
             </ImageTitle>
         </div>
     )
