@@ -1,13 +1,18 @@
 import axios from "axios"
+import itemList from "../types/itemMetadata"
+let itemMetadataArr: itemList[] = [];
+let itemDataList;
 
-export default async function getItems() {
+const getItems = async() =>  {
     const localURL = "http://localhost:3000";
     try {
         const rawData = await axios.get(localURL + '/api/items');
-        const itemData = rawData.data.listings
-        console.log("=== itemData === : ", itemData)
-        return itemData;
+        itemDataList = rawData.data.listings
+        itemDataList.map((item) => (itemMetadataArr.push(item.metadata)))
+        return itemMetadataArr;
     } catch (error) {
         console.error("Error fetching data:", error);
     }
 }
+
+export default getItems
