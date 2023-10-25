@@ -15,4 +15,4 @@ const getItems = async() =>  {
     }
 }
 
-export default getItems
+export default getItems;
