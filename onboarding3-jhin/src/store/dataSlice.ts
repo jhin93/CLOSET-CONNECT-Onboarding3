@@ -20,7 +20,7 @@ export const fetchData = createAsyncThunk('data/fetchData', async () => {
 // 데이터 슬라이스 생성
 const dataSlice = createSlice({
     name: 'data',
-    initialState: { beta: null },
+    initialState: { data: null },
     reducers: {
         // 아무 동작을 하지 않는 빈 리듀서를 정의할 수 있습니다.
         emptyReducer: (state, action) => {
@@ -29,9 +29,9 @@ const dataSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchData.fulfilled, (state, action) => {
-            state.beta = action.payload;
-        });
-    },
+            state.data = action.payload
+        })
+    }
 });
 
 export default dataSlice.reducer;
