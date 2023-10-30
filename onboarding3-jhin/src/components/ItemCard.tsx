@@ -20,10 +20,10 @@ const ItemName = styled.p`
 
 export default function ItemCard({ item }: itemMetadata[]) {
     const dispatch = useDispatch();
-    const items = useSelector((state) => state.items);
+    const items = useSelector((state) => state);
 
     useEffect(() => {
-        if (items.length === 0) {
+        if (items === 0) {
             // Redux 스토어에 아이템 목록이 없을 때만 데이터를 가져옴
             dispatch(fetchItems());
         }
