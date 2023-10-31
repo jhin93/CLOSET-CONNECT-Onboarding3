@@ -19,8 +19,8 @@ const ItemName = styled.p`
 `;
 
 export default function ItemCard({ item }: itemMetadata[]) {
-    const dispatch = useDispatch();
-    const items = useSelector((state) => state);
+    const dispatch = useDispatch(); // Redux 액션을 dispatch 하여 Redux 스토어의 상태를 업데이트할 수 있다.
+    const items = useSelector((state) => state); // Redux 스토어에서 state를 읽고, 해당 상태를 컴포넌트에서 사용할 수 있도록 함. 해당 state를 컴포넌트의 변수에 할당하여 사용 가능.
 
     useEffect(() => {
         if (items === 0) {
