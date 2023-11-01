@@ -14,4 +14,9 @@ const store = configureStore({
 
 sagaMiddleware.run(itemsSaga);
 
+let initialItems = store.getState().items // 결과 : { items: [] }
+// 이 부분에서 초기 items 상태를 확인
+console.log("(store.ts)Initial items :", initialItems);
+
+
 export default store;
