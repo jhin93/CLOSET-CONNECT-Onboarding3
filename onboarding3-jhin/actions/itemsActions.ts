@@ -1,5 +1,4 @@
-
-export const fetchItems = (items) => ({
+export const setItems = (items) => ({
     type: 'items/setItems',
     payload: items
 });

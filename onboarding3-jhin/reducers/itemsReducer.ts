@@ -7,7 +7,7 @@ const itemsSlice = createSlice({
         setItems: (state, action) => {
             return { ...state, items: action.payload }; // items 속성을 업데이트
         },
-    },
+    }
 });
 
 export const { setItems } = itemsSlice.actions;
