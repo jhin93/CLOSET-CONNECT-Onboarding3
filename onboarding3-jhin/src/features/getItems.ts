@@ -9,10 +9,11 @@ const getItems = async() =>  {
         const rawData = await axios.get(localURL + '/api/items');
         itemDataList = rawData.data.listings
         itemDataList.map((item) => (itemMetadataArr.push(item.metadata)))
+        console.log("(getItems.ts)itemMetadataArr : ", itemMetadataArr)
         return itemMetadataArr;
     } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching data from getItems.ts :", error);
     }
 }
 
-export default getItems
+export default getItems;
