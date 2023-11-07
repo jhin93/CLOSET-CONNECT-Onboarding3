@@ -1,7 +1,7 @@
 
 import { call, put, takeLatest } from 'redux-saga/effects';
-import setItems from '../reducers/itemsReducer';
-import getItems from '../src/features/getItems'; // 아이템 metadata 리스트를 불러오는 함수 getItems
+import {setItems} from '../reducers/itemsReducer'; // {} 처리하지 않으면 default 설정된 export가 import 됨(itemsSlice.reducer).
+import getItems from '../getItems'; // 아이템 metadata 리스트를 불러오는 함수 getItems
 
 function* fetchItems() {
     try {
